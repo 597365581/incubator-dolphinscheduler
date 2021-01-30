@@ -108,6 +108,7 @@ public class ShellTaskTest {
         taskExecutionContext.setCmdTypeIfComplement(0);
         shellTask = new ShellTask(taskExecutionContext, logger);
         shellTask.init();
+        shellCommandExecutor.isSuccessOfYarnState(new ArrayList<>());
         PowerMockito.when(shellCommandExecutor.run(anyString())).thenReturn(commandExecuteResult);
         shellTask.handle();
     }
